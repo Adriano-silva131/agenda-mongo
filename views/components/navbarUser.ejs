@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+      <a class="navbar-brand" href="/">
+        <img src="img-logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+        SchedulePro
+      </a>
+      <div class="collapse navbar-collapse justify-content-end">
+      <div class="navbar-nav">
+          <% if (userName) { %>
+            <span class="nav-item nav-link">Olá, <%= userName %></span>
+          <% } %>
+          <a class="nav-item nav-link" href="/logout">Sair</a>
+      </div>
+    </div>
+    </nav>
+  </header>

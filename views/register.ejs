@@ -1,0 +1,35 @@
+<%- include('./components/header.ejs') %> 
+<%- include('./components/navbar.ejs')%>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <form action="/register" method="POST" class="w-25">
+    <% if(successMessage.length > 0) { %>
+    <div class="alert alert-success" role="alert"><%= successMessage %></div>
+    <% } %> <% if(errorMessage.length > 0) { %>
+    <div class="alert alert-danger" role="alert"><%= errorMessage %></div>
+    <% } %>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Senha</label>
+      <input type="password" class="form-control" name="senha" id="senha" />
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="check-remeber">Manter Login</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+</div>
